@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <link rel="stylesheet" href="gio.css">
   <style>
-    /* Estilos generales */
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -159,8 +159,6 @@ nav.navbar ul li a {
   display: block;
 }
 
-
-
 .content .name {
   font-size: 40px;
   text-transform: uppercase;
@@ -294,7 +292,10 @@ nav.navbar ul li a {
 }
 
 .modal-content input[type="text"],
-.modal-content input[type="submit"] {
+.modal-content input[type="submit"],
+.modal-content input[type="email"],
+.modal-content input[type="number"],
+.modal-content select {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
@@ -352,69 +353,31 @@ nav.navbar ul li a {
 
   nav.navbar ul {
     flex-direction: column;
-    gap: 10px;
+    display: none;
   }
 
-  .slide {
-    height: auto;
+  nav.navbar ul.show {
+    display: flex;
   }
 
   .slide .item {
-    position: static;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    width: 150px;
+    height: 200px;
   }
 
-  .slide .item:nth-child(1),
-  .slide .item:nth-child(2) {
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: auto;
+  .slide .item:nth-child(2) .content {
+    left: 50px;
+    width: 200px;
   }
 
-  .slide .item:nth-child(n + 3) {
-    display: none;
+  .slide .item:nth-child(2) .content .name {
+    font-size: 30px;
   }
 
-  .content {
-    position: static;
-    transform: translate(0, 0);
-    width: 100%;
-    text-align: center;
-  }
-
-  .content .name {
-    font-size: 24px;
-  }
-
-  .content .des {
-    font-size: 14px;
-  }
-
-  .button {
-    display: none;
-  }
-
-  .modal-content {
-    width: 90%;
-    padding: 10px;
-  }
-
-  .modal-receipt-content {
-    width: 90%;
-    padding: 10px;
-  }
-
-  .modal-content input[type="text"],
-  .modal-content input[type="submit"] {
+  .slide .item:nth-child(2) .content .des {
     font-size: 14px;
   }
 }
-
 
   </style>
 </head>
